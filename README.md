@@ -1,25 +1,36 @@
-
 # perceptronEntrenar
 
-<!-- badges: start -->
-<!-- badges: end -->
+Este paquete entrena un perceptron simple para clasificacion binaria en R. Estandariza las variables y ajusta los pesos y el sesgo por epocas.
 
-The goal of perceptronEntrenar is to ...
+Es el primero de tres paquetes independientes: `perceptronEntrenar`, `perceptronPredecir` y `perceptronGraficar`.
 
-## Installation
+## Instalacion
 
-You can install the development version of perceptronEntrenar like so:
+Puedes instalar la version de desarrollo desde GitHub con:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages("devtools")
+devtools::install_github("estefanymarce-prog/perceptronEntrenar")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+## Ejemplo
 
 ``` r
 library(perceptronEntrenar)
-## basic example code
+
+set.seed(123)
+X <- data.frame(horas = runif(100, 1, 10), asistencia = runif(100, 40, 100))
+y <- as.integer(2 * X$horas + 0.08 * X$asistencia >= 10)
+
+modelo <- entrenar_perceptron(X, y, epocas = 100, tasa = 0.01)
+modelo
 ```
 
+## Resultado
+
+`entrenar_perceptron()` devuelve una lista con cuatro elementos:
+
+- `pesos`: peso de cada variable.
+- `sesgo`: termino de sesgo.
+- `medias`: media de cada variable (para estandarizar datos nuevos).
+- `desviaciones`: desviacion estandar de cada variable.

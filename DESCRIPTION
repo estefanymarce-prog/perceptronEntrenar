@@ -1,13 +1,16 @@
 Package: perceptronEntrenar
-Title: What the Package Does (One Line, Title Case)
+Title: Entrenamiento de un Perceptron Simple
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Marcela", "Paucar", , "estefany.marce@gmail.com", role = c("aut", "cre"))
+Description: Entrena un perceptron simple para clasificacion binaria,
+    estandarizando las variables y ajustando pesos y sesgo por epocas.
 License: MIT + file LICENSE
-Config/roxygen2/version: 8.1.1
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.1
+Imports: 
+    stats
